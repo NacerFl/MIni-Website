@@ -1,0 +1,50 @@
+<%- include ('header')  %>
+
+    <meta charset="UTF-8">
+    <h1>  Accueil</h1e>
+
+
+    <div class="login-accueil">
+    <a href="/logout" class="btn btn-danger">Logout</a>
+
+    <tbody>
+        <tr>
+          <td>Nom:</td>
+          <td><%=name%></td>
+          <td><%=opp%></td>
+          <p>Bienvenue <%= obja %></p>
+        </tr>
+       
+      </tbody>
+
+      <form action="memo" method="post" class="ui form"
+      <div class = "field">
+       <label for="memo">Memo</label>
+  
+          <textarea name="memo" id="memo"></textarea>
+      </div>
+  
+      <button type="submit" class="ui blue labeld submit icon button">
+      
+          <i class="icon edit"></i>Envoyer
+          </button>
+
+          <div class="ui comments">
+
+            <form action="memo2" method="POST" class="ui form">
+            <h3 class="ui dividing hader"> Liste des Memo </h3>
+            <div class="comment"> 
+             <div class="content">
+                 <div class="text"> <%- locals.memo %></div>  
+                 <!-- j'ai mis locals.memo pour que cela compile mais normalement on doit mettre %= contenue%> qui contient les memo (cf: server.js avec contenue:request.session.memo)  -->
+                 <!-- mais il ne s'affiche pas, pourtant les memo ce trouvent bien dans la BDD :( -->
+    
+             </div>   
+            </div>
+    
+    </div>
+
+      
+
+
+      <%- include ('footer') %>
